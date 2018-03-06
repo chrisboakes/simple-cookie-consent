@@ -1,0 +1,4 @@
+import './style.scss';
+import CookieConsent from '../src/js';
+
+new CookieConsent();

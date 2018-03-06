@@ -1,0 +1,74 @@
+{
+    "name": "simple-cookie-consent",
+    "author": "Chris Boakes",
+    "version": "0.1.0",
+    "description": "A simple cookie consent bar with configurable options",
+    "main": "dist/simple-cookie-consent.min.js",
+    "dependencies": {},
+    "devDependencies": {
+        "autoprefixer": "^7.2.5",
+        "babel-core": "^6.26.0",
+        "babel-eslint": "^8.2.1",
+        "babel-jest": "^22.2.0",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-latest": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "clean-webpack-plugin": "^0.1.18",
+        "codecov": "^3.0.0",
+        "css-loader": "^0.28.9",
+        "eslint": "^4.17.0",
+        "eslint-config-standard": "^11.0.0-beta.0",
+        "eslint-loader": "^1.9.0",
+        "eslint-plugin-html": "^4.0.2",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-jest": "^21.7.0",
+        "eslint-plugin-node": "^6.0.0",
+        "eslint-plugin-promise": "^3.6.0",
+        "eslint-plugin-standard": "^3.0.1",
+        "extract-text-webpack-plugin": "^3.0.2",
+        "html-webpack-plugin": "^2.30.1",
+        "jest": "^22.2.1",
+        "node-sass": "^4.7.2",
+        "postcss-encode-background-svgs": "^1.0.0",
+        "postcss-loader": "^2.1.0",
+        "sass-loader": "^6.0.6",
+        "style-loader": "^0.20.1",
+        "webpack": "^3.10.0",
+        "webpack-dev-server": "^2.11.1"
+    },
+    "jest": {
+        "moduleNameMapper": {
+            "\\.(css|scss)$": "<rootDir>/src/js/__test__/__mocks__/style-mock.js"
+        },
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "node"
+        ],
+        "transform": {
+            "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+        },
+        "mapCoverage": true,
+        "collectCoverage": true
+    },
+    "scripts": {
+        "test": "node ./node_modules/jest/bin/jest.js",
+        "test:watch": "npm run test -- --watch --onlyChanged --notify",
+        "start": "npm run dev",
+        "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config=webpack.config.dev.js",
+        "build": "node ./node_modules/webpack/bin/webpack.js --hide-modules -p --progress",
+        "production": "npm run test && npm run build",
+        "report-coverage": "codecov"
+    },
+    "keywords": [],
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "",
+    "license": "MIT"
+}

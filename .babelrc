@@ -1,0 +1,15 @@
+{
+    "presets": ["env", "latest", "stage-0"],
+    "env": {
+        "test": {
+            "presets": [
+                ["env", {
+                    "targets": {
+                        "node": "current"
+                    }
+                }]
+            ],
+            "plugins": ["istanbul"]
+        }
+    }
+}
