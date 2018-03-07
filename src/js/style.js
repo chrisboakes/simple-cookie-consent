@@ -43,10 +43,14 @@ export default {
     /**
      * @return Array
      */
-    getButton() {
-        return [
-            'width: 10%'
-        ];
+    getButton(options) {
+        return this.resetButton().concat([
+            `background-color: ${options.buttonColor}`,
+            `color: ${options.buttonTextColor}`,
+            `font-family: ${options.fontFamily}`,
+            `font-size: ${options.fontSize}`,
+            'width: auto'
+        ]);
     },
 
     /**
@@ -59,6 +63,16 @@ export default {
             'position: absolute',
             'overflow: hidden',
             'top: -10px'
+        ];
+    },
+
+    resetButton() {
+        return [
+            '-webkit-box-sizing: content-box',
+            '-moz-box-sizing: content-box',
+            'box-sizing: content-box',
+            'background: none',
+            'border: 0'
         ];
     }
 };

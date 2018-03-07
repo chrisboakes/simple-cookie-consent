@@ -24,13 +24,12 @@ export default {
      */
     createAcceptButton(options) {
         let acceptButton = this.createDOMElement(
-            'a',
-            [],
+            'button',
+            style.getButton(options),
             `Accept ${this.getAccessiblityText(options)}`,
             `${options.barClassName}__button ${options.barClassName}__button--accept`
         );
         acceptButton.setAttribute('aria-label', 'Accept consent to set cookies');
-        acceptButton.setAttribute('href', '#accept-consent-to-set-cookies');
         return acceptButton;
     },
 
