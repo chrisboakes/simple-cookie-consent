@@ -15,7 +15,7 @@ export default class {
     combineDefaultOptions(options) {
         return {
             ...{
-                policyWording: 'We use cookies to create your experience of our website better. To comply with the E-Privacy Regulations, we need to ask for your consent to set these cookies.',
+                policyText: 'We use cookies to create your experience of our website better. To comply with the E-Privacy Regulations, we need to ask for your consent to set these cookies.',
                 anchorBottom: true,
                 barColor: '#333',
                 buttonColor: '#CCC',
@@ -25,7 +25,8 @@ export default class {
                 fontFamily: 'Arial',
                 fontSize: '16px',
                 barVerticalPadding: '20px',
-                findOutMoreLink: ''
+                additionalLink: '',
+                additionalLinkText: ''
             },
             ...options
         };

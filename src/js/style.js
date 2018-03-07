@@ -5,9 +5,11 @@ export default {
      * @param Array styles
      */
     setStyles(element, styles) {
-        styles.forEach((styleOption) => {
-            element.style.cssText += styleOption;
-        });
+        if (styles.length > 0) {
+            styles.forEach((styleOption) => {
+                element.style.cssText += styleOption;
+            });
+        }
     },
 
     /**
@@ -44,6 +46,19 @@ export default {
     getButton() {
         return [
             'width: 10%'
+        ];
+    },
+
+    /**
+     * @return Array
+     */
+    getAccessiblity() {
+        return [
+            'height: 1px',
+            'width: 1px',
+            'position: absolute',
+            'overflow: hidden',
+            'top: -10px'
         ];
     }
 };
