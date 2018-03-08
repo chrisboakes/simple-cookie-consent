@@ -1,5 +1,3 @@
-import style from './style';
-
 export default {
     /**
      * Build a DOM Element for the cookie bar
@@ -7,14 +5,14 @@ export default {
      */
     createCookieBar(options) {
         // Wrapper
-        let cookieBar = this.createDOMElement('div', style.getWrapper(options), options.barClassNameName);
+        let cookieBar = this.createDOMElement('div', options.barClassNameName);
         // Policy text
-        cookieBar.appendChild(this.createDOMElement('p', style.getPolicy(options), options.policyText, `${options.barClassName}__policy`));
+        cookieBar.appendChild(this.createDOMElement('p', options.policyText, `${options.barClassName}__policy`));
         // Accept button
         cookieBar.appendChild(this.createAcceptButton(options));
         // Additional link
         if (options.additionalLink && options.additionalLinkText) {
-            let additionalButton = this.createDOMElement('a', [], options.additionalLinkText, `${options.barClassName}__button ${options.barClassName}__button--additional`);
+            let additionalButton = this.createDOMElement('a', options.additionalLinkText, `${options.barClassName}__button ${options.barClassName}__button--additional`);
             additionalButton.setAttribute('href', options.additionalLink);
             cookieBar.appendChild(additionalButton);
         }
@@ -27,7 +25,6 @@ export default {
     createAcceptButton(options) {
         let acceptButton = this.createDOMElement(
             'button',
-            style.getButton(options),
             `Accept ${this.getAccessiblityText(options)}`,
             `${options.barClassName}__button ${options.barClassName}__button--accept`
         );
@@ -39,7 +36,7 @@ export default {
      * @return DOMElement
      */
     getAccessiblityText(options) {
-        return this.createDOMElement('span', style.getAccessiblity(), 'consent to set cookies', `${options.barClassName}__accessible-text`).outerHTML;
+        return this.createDOMElement('span', 'consent to set cookies', `${options.barClassName}__accessible-text`).outerHTML;
     },
 
     /**
@@ -50,9 +47,8 @@ export default {
      * @param String content
      * @return DOMElement
      */
-    createDOMElement(type, styles, content = '', className = '') {
+    createDOMElement(type, content = '', className = '') {
         let element = document.createElement(type);
-        style.setStyles(element, styles);
         if (className) {
             element.setAttribute('class', className);
         }
