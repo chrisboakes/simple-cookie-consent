@@ -14,7 +14,9 @@ export default {
         cookieBar.appendChild(this.createAcceptButton(options));
         // Additional link
         if (options.additionalLink && options.additionalLinkText) {
-            cookieBar.appendChild(this.createDOMElement('a', [], options.additionalLinkText, `${options.barClassName}__button ${options.barClassName}__button--additional`));
+            let additionalButton = this.createDOMElement('a', [], options.additionalLinkText, `${options.barClassName}__button ${options.barClassName}__button--additional`);
+            additionalButton.setAttribute('href', options.additionalLink);
+            cookieBar.appendChild(additionalButton);
         }
         return cookieBar.outerHTML;
     },
