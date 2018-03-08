@@ -1,0 +1,94 @@
+$bar-background-color: #333;
+$bar-text-color: #FFF;
+$button-background-color: #FFF;
+$button-text-color: #333;
+$font-family: 'Arial';
+$font-size: 16px;
+$small-breakpoint: 400px;
+$large-breakpoint: 800px;
+
+.c-cookie-bar {
+    background-color: $bar-background-color;
+    color: $bar-text-color;
+    font-family: $font-family;
+    font-size: $font-size;
+    left: 0;
+    line-height: 1.4;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+        width: 100%;
+
+        @media only screen and (min-width: $large-breakpoint) {
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+
+    &__policy {
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    &__accept {
+        background: none;
+        background-color: $button-background-color;
+        border: 0;
+        color: $button-text-color;
+        cursor: pointer;
+        font-family: $font-family;
+        font-size: $font-size;
+        font-weight: bold;
+        margin: 20px 20px 0;
+        padding: 10px 45px 10px 20px;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        width: auto;
+
+        @media only screen and (min-width: $large-breakpoint) {
+            margin: 0 20px;
+        }
+
+        &::after {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.8 77.3"><path d="M37 50.4L13.4 26.9 0 40.3l37 37 63.9-63.9L87.4 0 37 50.4z"/></svg>');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            content: '';
+            display: block;
+            height: 18px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translate(0, -50%);
+            width: 23px;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__additional {
+        @extend .c-cookie-bar__accept;
+
+        &::after {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0 57.1h71.4L39.3 89.2 50 100l50-50L50 0 39.3 10.7l32.1 32.2H0v14.2z"/></svg>');
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+    &__accessible-text {
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        top: -10px;
+        width: 1px;
+    }
+}

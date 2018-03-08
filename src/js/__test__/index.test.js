@@ -5,21 +5,14 @@ describe('Options should combine', () => {
         let cookieConsent = new CookieConsent();
 
         let input = cookieConsent.combineDefaultOptions({
-            anchorBottom: false
+            additionalLink: '#'
         });
 
         let output = {
             policyText: 'We use cookies to create your experience of our website better. To comply with the E-Privacy Regulations, we need to ask for your consent to set these cookies.',
-            anchorBottom: false,
-            barColor: '#333',
-            buttonColor: '#CCC',
-            barTextColor: '#FFF',
-            buttonTextColor: '#333',
             barClassName: 'c-cookie-bar',
-            fontFamily: 'Arial',
-            fontSize: '16px',
-            barVerticalPadding: '20px',
-            findOutMoreLink: ''
+            additionalLink: '#',
+            additionalLinkText: ''
         };
 
         expect(input).toEqual(output);

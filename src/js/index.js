@@ -1,3 +1,4 @@
+import '../scss/simple-cookie-consent.scss';
 import domElement from './dom-elements';
 
 export default class {
