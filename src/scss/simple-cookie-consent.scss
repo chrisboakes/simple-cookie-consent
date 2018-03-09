@@ -4,10 +4,12 @@ $button-background-color: #FFF;
 $button-text-color: #333;
 $font-family: 'Arial';
 $font-size: 16px;
-$small-breakpoint: 400px;
+$small-breakpoint: 500px;
 $large-breakpoint: 800px;
+$x-large-breakpoint: 1200px;
 
 .c-cookie-bar {
+    $this: &;
     background-color: $bar-background-color;
     color: $bar-text-color;
     font-family: $font-family;
@@ -21,6 +23,8 @@ $large-breakpoint: 800px;
     &__inner {
         display: flex;
         flex-direction: column;
+        margin: 0 auto;
+        max-width: 1400px;
         padding: 20px 0;
         width: 100%;
 
@@ -31,11 +35,28 @@ $large-breakpoint: 800px;
     }
 
     &__policy {
+        flex: 2;
         margin: 0;
         padding: 0 20px;
     }
 
-    &__accept {
+    &__buttons-wrap {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        width: 100%;
+
+        @media only screen and (min-width: $small-breakpoint) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @media only screen and (min-width: $large-breakpoint) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__button {
         background: none;
         background-color: $button-background-color;
         border: 0;
@@ -45,14 +66,22 @@ $large-breakpoint: 800px;
         font-size: $font-size;
         font-weight: bold;
         margin: 20px 20px 0;
-        padding: 10px 45px 10px 20px;
         position: relative;
-        text-align: left;
+        text-align: center;
         text-decoration: none;
         width: auto;
 
+        @media only screen and (min-width: $small-breakpoint) {
+            max-width: 200px;
+            width: 100%;
+        }
+
         @media only screen and (min-width: $large-breakpoint) {
             margin: 0 20px;
+        }
+
+        &:focus {
+            outline: none;
         }
 
         &::after {
@@ -61,27 +90,26 @@ $large-breakpoint: 800px;
             background-size: 100%;
             content: '';
             display: block;
-            height: 18px;
+            height: 12px;
             position: absolute;
             right: 10px;
             top: 50%;
             transform: translate(0, -50%);
-            width: 23px;
+            width: 16px;
         }
 
-        &:focus {
-            outline: none;
+        &--additional {
+            &::after {
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0 57.1h71.4L39.3 89.2 50 100l50-50L50 0 39.3 10.7l32.1 32.2H0v14.2z"/></svg>');
+                height: 16px;
+                width: 16px;
+            }
         }
     }
 
-    &__additional {
-        @extend .c-cookie-bar__accept;
-
-        &::after {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0 57.1h71.4L39.3 89.2 50 100l50-50L50 0 39.3 10.7l32.1 32.2H0v14.2z"/></svg>');
-            height: 20px;
-            width: 20px;
-        }
+    &__button-text {
+        display: block;
+        padding: 10px 45px 10px 20px;
     }
 
     &__accessible-text {
@@ -90,5 +118,19 @@ $large-breakpoint: 800px;
         position: absolute;
         top: -10px;
         width: 1px;
+    }
+
+    &--has-additional {
+        #{$this}__policy {
+            flex: .8;
+
+            @media only screen and (min-width: $x-large-breakpoint) {
+                flex: 1.5;
+            }
+        }
+
+        #{$this}__button {
+            max-width: none;
+        }
     }
 }
