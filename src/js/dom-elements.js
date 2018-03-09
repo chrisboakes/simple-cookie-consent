@@ -5,34 +5,61 @@ export default {
      */
     createCookieBar(options) {
         // Wrapper
-        let cookieBar = this.createDOMElement('div', '', options.barClassName);
+        let cookieBarClassNames = (options.additionalLink && options.additionalLinkText) ? ` ${options.barClassName}--has-additional` : '';
+        let cookieBar = this.createDOMElement('div', '', options.barClassName + cookieBarClassNames);
+
         // Inner wrap
         let cookieBarInner = this.createDOMElement('div', '', `${options.barClassName}__inner`);
         cookieBar.appendChild(cookieBarInner);
+
         // Policy text
         cookieBarInner.appendChild(this.createDOMElement('p', options.policyText, `${options.barClassName}__policy`));
-        // Accept button
-        cookieBarInner.appendChild(this.createAcceptButton(options));
-        // Additional link
-        if (options.additionalLink && options.additionalLinkText) {
-            let additionalButton = this.createDOMElement('a', options.additionalLinkText, `${options.barClassName}__additional`);
-            additionalButton.setAttribute('href', options.additionalLink);
-            cookieBarInner.appendChild(additionalButton);
-        }
+
+        // Buttons
+        cookieBarInner.appendChild(this.createButtons(options));
+
         return cookieBar.outerHTML;
     },
 
     /**
      * @return DOMElement
      */
+    createButtons(options) {
+        // Buttons
+        let buttonsWrap = this.createDOMElement('div', '', `${options.barClassName}__buttons-wrap`);
+
+        // Accept button
+        buttonsWrap.appendChild(this.createAcceptButton(options));
+
+        // Additional link
+        if (options.additionalLink && options.additionalLinkText) {
+            let buttonContent = this.createDOMElement('span', options.additionalLinkText, `${options.barClassName}__button-text`);
+            let additionalButton = this.createDOMElement('a', buttonContent.outerHTML, `${options.barClassName}__button ${options.barClassName}__button--additional`);
+            additionalButton.setAttribute('href', options.additionalLink);
+            buttonsWrap.appendChild(additionalButton);
+        }
+
+        return buttonsWrap;
+    },
+
+    /**
+     * @return DOMElement
+     */
     createAcceptButton(options) {
-        let acceptButton = this.createDOMElement(
-            'button',
+        let buttonContent = this.createDOMElement(
+            'span',
             `Accept ${this.getAccessiblityText(options)}`,
-            `${options.barClassName}__accept`
+            `${options.barClassName}__button-text`
         );
-        acceptButton.setAttribute('aria-label', 'Accept consent to set cookies');
-        return acceptButton;
+
+        let button = this.createDOMElement(
+            'button',
+            buttonContent.outerHTML,
+            `${options.barClassName}__button`
+        );
+
+        button.setAttribute('aria-label', 'Accept consent to set cookies');
+        return button;
     },
 
     /**
