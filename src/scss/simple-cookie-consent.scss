@@ -11,13 +11,13 @@ $x-large-breakpoint: 1200px;
 .c-cookie-bar {
     $this: &;
     background-color: $bar-background-color;
+    bottom: 0;
     color: $bar-text-color;
     font-family: $font-family;
     font-size: $font-size;
     left: 0;
     line-height: 1.4;
     position: fixed;
-    top: 0;
     width: 100%;
 
     &__inner {
