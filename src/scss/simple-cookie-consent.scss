@@ -80,6 +80,10 @@ $x-large-breakpoint: 1200px;
             margin: 0 20px;
         }
 
+        &:hover {
+            background-color: darken($button-background-color, 5%);
+        }
+
         &:focus {
             outline: none;
         }
