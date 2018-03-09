@@ -38,9 +38,6 @@
         "webpack-dev-server": "^2.11.1"
     },
     "jest": {
-        "moduleNameMapper": {
-            "\\.(css|scss)$": "<rootDir>/src/js/__test__/__mocks__/style-mock.js"
-        },
         "moduleFileExtensions": [
             "js",
             "json",
