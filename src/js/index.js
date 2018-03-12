@@ -22,7 +22,7 @@ export default class {
         return {
             ...{
                 policyText: 'We use cookies to create your experience of our website better. To comply with the E-Privacy Regulations, we need to ask for your consent to set these cookies.',
-                barClassName: 'c-cookie-bar',
+                barClassName: 'c-simple-cookie-consent',
                 additionalLink: '',
                 additionalLinkText: ''
             },
