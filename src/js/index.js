@@ -1,12 +1,17 @@
 import '../scss/simple-cookie-consent.scss';
 import domElement from './dom-elements';
+import consent from './consent';
 
 export default class {
     constructor(options) {
-        // Combine our default parameters with those passed in
-        this.options = this.combineDefaultOptions(options);
-        // Initialise the markup of the cookie bar
-        this.initCookieBar();
+        if (!consent.checkConsent()) {
+            // Combine our default parameters with those passed in
+            this.options = this.combineDefaultOptions(options);
+            // Initialise the markup of the cookie bar
+            this.initCookieBar();
+            // Accept button listener
+            consent.setAcceptListener(this.options);
+        }
     }
 
     /**
