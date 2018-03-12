@@ -1,3 +1,7 @@
+/**
+ * Build the DOM for the cookie consent bar
+ * @author CB
+ */
 export default {
     /**
      * Build a DOM Element for the cookie bar
@@ -55,7 +59,7 @@ export default {
         let button = this.createDOMElement(
             'button',
             buttonContent.outerHTML,
-            `${options.barClassName}__button`
+            `${options.barClassName}__button ${options.barClassName}__button--accept`
         );
 
         button.setAttribute('aria-label', 'Accept consent to set cookies');
