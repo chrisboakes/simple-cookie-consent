@@ -1,5 +1,10 @@
 # Simple Cookie Consent
 
+[![npm version][npm-badge-version]][npm-link]
+
+[npm-badge-version]: https://img.shields.io/npm/v/simple-cookie-consent.svg
+[npm-link]: https://www.npmjs.com/package/simple-cookie-consent
+
 A basic cookie consent bar to help comply with the EU GDPR regulation. Compatible with all modern browsers and IE10+.
 
 ## Installation
