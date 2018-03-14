@@ -1,7 +1,6 @@
 # Don't publish these files and folders
 /.idea/
 /.github/
-/examples/
 /docs/
 /test/
 /__test__/
