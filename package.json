@@ -1,7 +1,7 @@
 {
     "name": "simple-cookie-consent",
     "author": "Chris Boakes",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "A basic cookie consent bar to help comply with the EU GDPR regulation",
     "main": "dist/simple-cookie-consent.min.js",
     "dependencies": {},
