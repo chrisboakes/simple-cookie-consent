@@ -19,6 +19,7 @@ $x-large-breakpoint: 1200px;
     line-height: 1.4;
     position: fixed;
     width: 100%;
+    z-index: 1000;
 
     &__inner {
         display: flex;
