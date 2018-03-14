@@ -1,6 +1,10 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+0.1.2 - 2018-03-14
+
+* Updated README to give examples of custom styling.
+
 0.1.1 - 2018-03-14
 
 * Added a z-index of 1000 to account for those other 999 z-indexes you might be using

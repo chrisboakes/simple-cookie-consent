@@ -5,7 +5,11 @@
 [npm-badge-version]: https://img.shields.io/npm/v/simple-cookie-consent.svg
 [npm-link]: https://www.npmjs.com/package/simple-cookie-consent
 
-A basic cookie consent bar to help comply with the EU GDPR regulation. Compatible with all modern browsers and IE10+.
+A basic cookie consent bar to help comply with the EU GDPR regulation. Compatible with all modern browsers and IE10+. It works by storing whether the user has consented in [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+
+By default, it displays a simple message and an 'Accept' button but an additional button (e.g. 'Find out more' with a custom link) can be added (see [Parameters](#parameters)). For example:
+
+![Cookie Bar Example](examples/cookie-bar-example-image.png)
 
 ## Installation
 
@@ -38,6 +42,28 @@ new SimpleCookieConsent();
 ```scss
 @import '../../node_modules/simple-cookie-consent/dist/simple-cookie-consent.min.css';
 ```
+
+## Custom styling
+
+All changes to styling should be made in CSS by overriding the base styles imported from the library. The markup is written using the [BEM methodology](https://en.bem.info/methodology/quick-start/) and changes can be structrued like so (SCSS):
+
+```scss
+.c-simple-cookie-consent {
+	// Bar styles here (e.g. background-color, position, z-index)
+	&__policy {
+		// Message styling here (e.g. font)
+	}
+
+    &__button {
+    	// Styles that apply to both the 'accept' and 'additonal button'. (e.g. background-color)
+    	&--additional {
+    		// Styles specifically for the 'additonal' button which override the base button styling
+    	}
+    }
+}
+```
+
+For additional elements, such as placement of buttons, inspect the bar in dev tools and override as demonstrated above.
 
 ## Parameters
 ### `(policyText, barClassName, additionalLink, additionalLinkText)`
