@@ -9,7 +9,7 @@ A basic cookie consent bar to help comply with the EU GDPR regulation. Compatibl
 
 By default, it displays a simple message and an 'Accept' button but an additional button (e.g. 'Find out more' with a custom link) can be added (see [Parameters](#parameters)). For example:
 
-![Cookie Bar Example](examples/cookie-bar-example-image.png)
+![Cookie Bar Example](examples/cookie-bar-example-image.png?raw=true)
 
 ## Installation
 
