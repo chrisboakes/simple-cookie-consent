@@ -1,6 +1,10 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+0.1.6 - 2018-03-14
+
+* Set padding to 0 on buttons to remove inherited styling. Fixes #1
+
 0.1.2 - 2018-03-14
 
 * Updated README to give examples of custom styling.
