@@ -1,9 +1,11 @@
 # Simple Cookie Consent
 
-[![npm version][npm-badge-version]][npm-link]
+[![npm version][npm-badge-version]][npm-link] [![StyleCI][styleci-badge]][styleci-link]
 
 [npm-badge-version]: https://img.shields.io/npm/v/simple-cookie-consent.svg
 [npm-link]: https://www.npmjs.com/package/simple-cookie-consent
+[styleci-badge]: https://styleci.io/repos/124103409/shield?branch=master
+[styleci-link]: https://styleci.io/repos/124103409
 
 A basic cookie consent bar to help comply with the EU GDPR regulation. Compatible with all modern browsers and IE10+. It works by storing whether the user has consented in [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
