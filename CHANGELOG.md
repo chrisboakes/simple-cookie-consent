@@ -1,6 +1,10 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+0.1.7 - 2018-03-19
+
+* Fixed painting issue where cookie bar was repainting on scroll.
+
 0.1.6 - 2018-03-14
 
 * Set padding to 0 on buttons to remove inherited styling. Fixes #1
