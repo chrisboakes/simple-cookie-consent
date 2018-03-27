@@ -21,7 +21,7 @@ export default class {
     combineDefaultOptions(options) {
         return {
             ...{
-                policyText: 'We use cookies to create your experience of our website better. To comply with the E-Privacy Regulations, we need to ask for your consent to set these cookies.',
+                policyText: 'We use cookies to make your experience of our website better. To comply with the E-Privacy Regulations, we need to ask for your consent to set these cookies.',
                 barClassName: 'c-simple-cookie-consent',
                 additionalLink: '',
                 additionalLinkText: ''

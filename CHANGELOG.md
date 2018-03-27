@@ -1,6 +1,10 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+0.1.8 - 2018-03-27
+
+* Fixed typo in default cookie statement
+
 0.1.7 - 2018-03-19
 
 * Fixed painting issue where cookie bar was repainting on scroll.
